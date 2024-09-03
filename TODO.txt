@@ -1,0 +1,4 @@
+text normalization
+    Convert all natural_text to lowercase, remove special characters, punctuation, numbers, and stop words
+    handle typos, and slang
+Expand Contractions (Optional): Expand contractions (e.g., “don’t” to “do not”) for consistency in text processing.
