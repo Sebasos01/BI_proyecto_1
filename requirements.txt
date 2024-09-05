@@ -15,6 +15,7 @@ cymem==2.0.8
 debugpy @ file:///home/conda/feedstock_root/build_artifacts/debugpy_1725269156501/work
 decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1641555617451/work
 docopt==0.6.2
+es-core-news-md @ https://github.com/explosion/spacy-models/releases/download/es_core_news_md-3.7.0/es_core_news_md-3.7.0-py3-none-any.whl#sha256=0d6d6ebed875869a9759c8c096f2cef581fa32d861646030f771c83e5799de82
 exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1720869315914/work
 executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1725214404607/work
 fonttools==4.53.1
@@ -72,6 +73,7 @@ smart-open==7.0.4
 spacy==3.7.6
 spacy-legacy==3.0.12
 spacy-loggers==1.0.5
+spacy_spanish_lemmatizer==0.7
 srsly==2.4.8
 stack-data @ file:///home/conda/feedstock_root/build_artifacts/stack_data_1669632077133/work
 thinc==8.2.5
