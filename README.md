@@ -8,6 +8,18 @@ Este repositorio contiene los archivos y notebooks utilizados en la primera entr
 
 [Acceder al documento en Overleaf](https://es.overleaf.com/read/wtgfyxnnrmyh#120450)
 
+## Código del Notebook de la Primera Entrega
+
+[Acceder al código en este repositorio](https://github.com/Sebasos01/BI_proyecto_1/blob/main/proyecto_1_entrega_1.ipynb)
+
+## Video de la Primera Entrega
+
+[Acceder al video en Youtube](youtube.com)
+
+## Presentación de la Primera Entrega
+
+[Acceder a la presentación en Canva](canva.com)
+
 ## Cómo Clonar y Ejecutar este Proyecto
 
 Para clonar y ejecutar este proyecto en tu entorno local, sigue estos pasos:
