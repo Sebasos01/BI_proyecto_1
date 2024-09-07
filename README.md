@@ -1,5 +1,3 @@
-Aquí tienes el código actualizado para utilizar Anaconda en lugar de un entorno virtual de Python:
-
 # BI_proyecto_1
 
 Este repositorio contiene los archivos y notebooks utilizados en la primera entrega del proyecto de Business Intelligence.
