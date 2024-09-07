@@ -6,7 +6,7 @@ Este repositorio contiene los archivos y notebooks utilizados en la primera entr
 
 ## Documento de la Primera Entrega
 
-[Acceder al documento en Overleaf](https://es.overleaf.com/read/dcjjgbcfhktz#3630d8)
+[Acceder al documento en Overleaf](https://es.overleaf.com/read/wtgfyxnnrmyh#120450)
 
 ## Cómo Clonar y Ejecutar este Proyecto
 
