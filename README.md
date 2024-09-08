@@ -12,7 +12,7 @@ Este repositorio contiene los archivos y notebooks utilizados en la primera entr
 
 ## Video de la Primera Entrega
 
-[Acceder al video en Youtube](youtube.com)
+[Acceder al video en Youtube](https://youtu.be/M3OBLslQXtM)
 
 ## Presentación de la Primera Entrega
 
