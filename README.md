@@ -16,7 +16,7 @@ Este repositorio contiene los archivos y notebooks utilizados en la primera entr
 
 ## Presentación de la Primera Entrega
 
-[Acceder a la presentación en Canva](canva.com)
+[Acceder a la presentación en Canva](https://www.canva.com/design/DAGPaeQtu94/4dxulC6U4rD8xNjmbX-mOA/view#7)
 
 ## Cómo Clonar y Ejecutar este Proyecto
 
