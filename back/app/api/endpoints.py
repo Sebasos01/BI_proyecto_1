@@ -12,12 +12,12 @@ pipeline = Pipeline()
 
 # Definir un esquema de entrada para las predicciones
 class PredictionRequest(BaseModel):
-    data: List[dict]  # Los datos deben ser proporcionados como una lista de diccionarios
+    data: str  # Los datos deben ser proporcionados como una lista de diccionarios
 
 # Definir un esquema de entrada para el reentrenamiento
 class RetrainRequest(BaseModel):
-    data: List[dict]  # Los datos de entrenamiento
-    target: List[int]  # Las etiquetas o categorías
+    data: List[str]  # Los datos de entrenamiento
+    target: List[str]  # Las etiquetas o categorías
 
 # Endpoint para hacer predicciones (Endpoint 1)
 @router.post("/predict")
