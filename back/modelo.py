@@ -59,7 +59,7 @@ class Modelo:
     def predecir(self, x_predecir):
         "X_predecir : dataframe"
         fecha_actual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        nombre_archivo = os.path.join(self.base_dir, 'logs', 'metadatos', f'prediccion_datos_{fecha_actual}.csv')
+        nombre_archivo = os.path.join(self.base_dir, 'logsModelo', 'metadatos', f'prediccion_datos_{fecha_actual}.csv')
 
         # Crear el directorio si no existe
         os.makedirs(os.path.dirname(nombre_archivo), exist_ok=True)
@@ -85,7 +85,7 @@ class Modelo:
 
     def configurar_logger(self):
         fecha_actual = datetime.now().strftime("%Y-%m-%d")
-        nombre_log = os.path.join(self.base_dir, "logs", "metadatos", f'log_predicciones_{fecha_actual}.txt')
+        nombre_log = os.path.join(self.base_dir, "logsModelo", "metadatos", f'log_predicciones_{fecha_actual}.txt')
 
         # Crear un logger personalizado
         logger = logging.getLogger('modelo_logger')
@@ -98,7 +98,7 @@ class Modelo:
             file_handler = logging.FileHandler(nombre_log)
             file_handler.setLevel(logging.INFO)
 
-            # Crear un formato para los logs
+            # Crear un formato para los logsModelo
             formatter = logging.Formatter('%(asctime)s - %(message)s')
             file_handler.setFormatter(formatter)
 
@@ -112,7 +112,7 @@ class Modelo:
             ruta_df_test = os.path.join(self.base_dir, "assets", "TestODScat_345.csv")
 
         fecha_actual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        nombre_archivo = os.path.join(self.base_dir, 'logs', 'metadatos', f'{fecha_actual}.csv')
+        nombre_archivo = os.path.join(self.base_dir, 'logsModelo', 'metadatos', f'{fecha_actual}.csv')
 
         # Crear el directorio si no existe
         os.makedirs(os.path.dirname(nombre_archivo), exist_ok=True)
