@@ -1,0 +1,141 @@
+2024-10-09 21:40:35,896 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-40-35.csv
+2024-10-09 21:40:35,900 - Error en la predicción. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-40-35.csv. Error: Traceback (most recent call last):
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/modelo.py", line 56, in predict
+    y_pred = self.modelo.predict(df_textos)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/pipeline.py", line 600, in predict
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/TransformadoresPersonalizados.py", line 54, in transform
+    X[self.columna] = X[self.columna].astype(str).apply(self._clean_text)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/pandas/core/series.py", line 4924, in apply
+    ).apply()
+      ^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/pandas/core/apply.py", line 1427, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/pandas/core/apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/pandas/core/base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/pandas/core/algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/TransformadoresPersonalizados.py", line 63, in _clean_text
+    word_tokens = word_tokenize(text)
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/nltk/tokenize/__init__.py", line 142, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/nltk/tokenize/__init__.py", line 119, in sent_tokenize
+    tokenizer = _get_punkt_tokenizer(language)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/nltk/tokenize/__init__.py", line 105, in _get_punkt_tokenizer
+    return PunktTokenizer(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/nltk/tokenize/punkt.py", line 1744, in __init__
+    self.load_lang(lang)
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/nltk/tokenize/punkt.py", line 1749, in load_lang
+    lang_dir = find(f"tokenizers/punkt_tab/{lang}/")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/nltk/data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - '/home/socub/nltk_data'
+    - '/home/socub/U/BI/BI_proyecto_1/back/venv/nltk_data'
+    - '/home/socub/U/BI/BI_proyecto_1/back/venv/share/nltk_data'
+    - '/home/socub/U/BI/BI_proyecto_1/back/venv/lib/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+**********************************************************************
+
+
+2024-10-09 21:48:55,921 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-48-55.csv
+2024-10-09 21:48:55,943 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-48-55.csv
+2024-10-09 21:56:36,134 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-56-36.csv
+2024-10-09 21:56:36,158 - Error en la predicción. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-56-36.csv. Error: Traceback (most recent call last):
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/modelo.py", line 64, in predict
+    'probabilidades': dict(zip(clases, y_pred_proba[idx].item()))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: can only convert an array of size 1 to a Python scalar
+
+2024-10-09 21:57:35,591 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-57-35.csv
+2024-10-09 21:57:35,613 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-57-35.csv
+2024-10-09 21:58:45,639 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-58-45.csv
+2024-10-09 21:58:45,661 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_21-58-45.csv
+2024-10-09 22:00:51,069 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-00-51.csv
+2024-10-09 22:00:51,092 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-00-51.csv
+2024-10-09 22:01:11,468 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-01-11.csv
+2024-10-09 22:01:11,491 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-01-11.csv
+2024-10-09 22:01:34,547 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-01-34.csv
+2024-10-09 22:01:34,570 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-01-34.csv
+2024-10-09 22:02:25,655 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-02-25.csv
+2024-10-09 22:02:25,677 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-02-25.csv
+2024-10-09 22:02:37,029 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-02-37.csv
+2024-10-09 22:02:37,054 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-02-37.csv
+2024-10-09 22:03:28,012 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-03-28.csv
+2024-10-09 22:03:28,035 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-03-28.csv
+2024-10-09 22:04:49,085 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-04-49.csv
+2024-10-09 22:04:49,108 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-04-49.csv
+2024-10-09 22:05:27,279 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-05-27.csv
+2024-10-09 22:05:27,283 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-05-27.csv
+2024-10-09 22:08:34,884 - Iniciando reentrenamiento. Cantidad de textos: 3. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-08-34.csv
+2024-10-09 22:08:34,890 - Error en el reentrenamiento. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-08-34.csv. Error: Traceback (most recent call last):
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/modelo.py", line 125, in retrain
+    nuevo_modelo = self.modelo.fit(X_train, y_train)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/pipeline.py", line 469, in fit
+    Xt = self._fit(X, y, routed_params)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/pipeline.py", line 406, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/joblib/memory.py", line 312, in __call__
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/pipeline.py", line 1310, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/base.py", line 668, in _validate_params
+    self.get_params(deep=False),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py", line 399, in get_params
+    return self._get_params("_transformers", deep=deep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/metaestimators.py", line 30, in _get_params
+    out = super().get_params(deep=deep)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/base.py", line 244, in get_params
+    value = getattr(self, key)
+            ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ColumnTransformer' object has no attribute 'force_int_remainder_cols'. Did you mean: '_get_remainder_cols'?
+

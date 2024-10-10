@@ -1,30 +1,30 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import List
+from typing import List, Dict
 
-# Importar el módulo del pipeline (aunque no implementaremos su lógica aquí)
-from app.core.pipeline import Pipeline
+# Importar el módulo del pipeline (tu clase Modelo actualizada)
+from app.core.modelo import Modelo
 
 router = APIRouter()
 
-# Instancia del pipeline
-pipeline = Pipeline()
+# Instancia del modelo
+modelo = Modelo()
 
-# Definir un esquema de entrada para las predicciones
+# Clases de solicitud y respuesta
 class PredictionRequest(BaseModel):
-    data: str  # Los datos deben ser proporcionados como una lista de diccionarios
+    data: List[str]
 
-# Definir un esquema de entrada para el reentrenamiento
 class RetrainRequest(BaseModel):
-    data: List[str]  # Los datos de entrenamiento
-    target: List[str]  # Las etiquetas o categorías
+    data: List[str]
+    target: List[int]
 
 # Endpoint para hacer predicciones (Endpoint 1)
 @router.post("/predict")
 async def predict(request: PredictionRequest):
     try:
-        predictions = pipeline.predict(request.data)
-        return {"predictions": predictions}
+        resultados = modelo.predict(request.data)
+        print(resultados)
+        return resultados
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -32,7 +32,7 @@ async def predict(request: PredictionRequest):
 @router.post("/retrain")
 async def retrain(request: RetrainRequest):
     try:
-        metrics = pipeline.retrain(request.data, request.target)
-        return {"metrics": metrics}
+        metrics = modelo.retrain(request.data, request.target)
+        return metrics
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

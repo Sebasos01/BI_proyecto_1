@@ -20,6 +20,7 @@ class TildeCorrector(BaseEstimator, TransformerMixin):
             'Ã¡': 'á',
             'Ã­': 'í'
         }
+        
 
     def fit(self, X, y=None):
         return self
