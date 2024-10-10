@@ -240,3 +240,5 @@ ValueError: Input y_true contains NaN.
 2024-10-09 22:43:10,796 - Reentrenamiento exitoso. Métricas: {'precision': np.float64(0.0), 'recall': np.float64(0.0), 'f1_score': np.float64(0.0)}
 2024-10-09 22:43:28,593 - Iniciando reentrenamiento. Cantidad de textos: 4049. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/datos/entrenamiento_datos_2024-10-09_22-43-28.csv
 2024-10-09 22:43:45,702 - Reentrenamiento exitoso. Métricas: {'precision': np.float64(0.9777827532468653), 'recall': np.float64(0.9777777777777777), 'f1_score': np.float64(0.9777737823641754)}
+2024-10-09 22:49:24,627 - Iniciando reentrenamiento. Cantidad de textos: 4049. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/datos/entrenamiento_datos_2024-10-09_22-49-24.csv
+2024-10-09 22:49:42,123 - Reentrenamiento exitoso. Métricas: {'precision': np.float64(0.9777827532468653), 'recall': np.float64(0.9777777777777777), 'f1_score': np.float64(0.9777737823641754)}
