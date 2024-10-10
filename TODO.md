@@ -4,9 +4,9 @@
    - **Objetivo**: Crear un pipeline que automatice la preparación de datos, construcción, persistencia y acceso al modelo analítico mediante una API.
    - **Pasos**:
      1. Desarrollar un pipeline que incluya:
-        - Preparación de datos.
-        - Entrenamiento del modelo.
-        - Persistencia del modelo en un repositorio.
+        - [x] Preparación de datos. 
+        - [x] Entrenamiento del modelo.
+        - [x] Persistencia del modelo en un repositorio.
      2. Implementar dos endpoints en la API REST:
         - **Endpoint 1**: Recibe datos en JSON para hacer predicciones con el modelo entrenado y devolver los resultados junto con las probabilidades.
         - **Endpoint 2**: Permite el re-entrenamiento del modelo con nuevos datos, devolviendo métricas de desempeño (Precision, Recall, F1-score). Proveer tres propuestas para re-entrenamiento y justificar cuál se implementa.
