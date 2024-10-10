@@ -139,3 +139,104 @@ ValueError: can only convert an array of size 1 to a Python scalar
             ^^^^^^^^^^^^^^^^^^
 AttributeError: 'ColumnTransformer' object has no attribute 'force_int_remainder_cols'. Did you mean: '_get_remainder_cols'?
 
+2024-10-09 22:17:04,853 - Iniciando predicción. Cantidad de textos: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-17-04.csv
+2024-10-09 22:17:04,876 - Predicción exitosa. Cantidad de predicciones: 2. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/prediccion_datos_2024-10-09_22-17-04.csv
+2024-10-09 22:17:17,070 - Iniciando reentrenamiento. Cantidad de textos: 3. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-17-17.csv
+2024-10-09 22:17:18,123 - Error en el reentrenamiento. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-17-17.csv. Error: Traceback (most recent call last):
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/modelo.py", line 136, in retrain
+    precision = precision_score(y_test, y_pred_test, average='weighted')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 2182, in precision_score
+    p, _, _, _ = precision_recall_fscore_support(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 186, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 1767, in precision_recall_fscore_support
+    labels = _check_set_wise_labels(y_true, y_pred, average, labels, pos_label)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 1539, in _check_set_wise_labels
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 86, in _check_targets
+    type_true = type_of_target(y_true, input_name="y_true")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/multiclass.py", line 389, in type_of_target
+    _assert_all_finite(data, input_name=input_name)
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 126, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 175, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y_true contains NaN.
+
+2024-10-09 22:17:30,703 - Iniciando reentrenamiento. Cantidad de textos: 3. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-17-30.csv
+2024-10-09 22:17:31,727 - Error en el reentrenamiento. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-17-30.csv. Error: Traceback (most recent call last):
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/modelo.py", line 136, in retrain
+    precision = precision_score(y_test, y_pred_test, average='weighted')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 2182, in precision_score
+    p, _, _, _ = precision_recall_fscore_support(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 186, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 1767, in precision_recall_fscore_support
+    labels = _check_set_wise_labels(y_true, y_pred, average, labels, pos_label)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 1539, in _check_set_wise_labels
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 86, in _check_targets
+    type_true = type_of_target(y_true, input_name="y_true")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/multiclass.py", line 389, in type_of_target
+    _assert_all_finite(data, input_name=input_name)
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 126, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 175, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y_true contains NaN.
+
+2024-10-09 22:19:12,941 - Iniciando reentrenamiento. Cantidad de textos: 3. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-19-12.csv
+2024-10-09 22:19:13,992 - Error en el reentrenamiento. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/metadatos/entrenamiento_datos_2024-10-09_22-19-12.csv. Error: Traceback (most recent call last):
+  File "/home/socub/U/BI/BI_proyecto_1/back/app/core/modelo.py", line 138, in retrain
+    precision = precision_score(y_test, y_pred_test, average='weighted')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 2182, in precision_score
+    p, _, _, _ = precision_recall_fscore_support(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 186, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 1767, in precision_recall_fscore_support
+    labels = _check_set_wise_labels(y_true, y_pred, average, labels, pos_label)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 1539, in _check_set_wise_labels
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 86, in _check_targets
+    type_true = type_of_target(y_true, input_name="y_true")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/multiclass.py", line 389, in type_of_target
+    _assert_all_finite(data, input_name=input_name)
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 126, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/home/socub/U/BI/BI_proyecto_1/back/venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 175, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y_true contains NaN.
+
+2024-10-09 22:29:24,322 - Iniciando reentrenamiento. Cantidad de textos: 3. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/datos/entrenamiento_datos_2024-10-09_22-29-24.csv
+2024-10-09 22:29:24,355 - Reentrenamiento exitoso. Métricas: {'precision': np.float64(0.0), 'recall': np.float64(0.0), 'f1_score': np.float64(0.0)}
+2024-10-09 22:43:10,760 - Iniciando reentrenamiento. Cantidad de textos: 3. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/datos/entrenamiento_datos_2024-10-09_22-43-10.csv
+2024-10-09 22:43:10,796 - Reentrenamiento exitoso. Métricas: {'precision': np.float64(0.0), 'recall': np.float64(0.0), 'f1_score': np.float64(0.0)}
+2024-10-09 22:43:28,593 - Iniciando reentrenamiento. Cantidad de textos: 4049. Archivo de entrada: /home/socub/U/BI/BI_proyecto_1/back/app/core/logsModelo/datos/entrenamiento_datos_2024-10-09_22-43-28.csv
+2024-10-09 22:43:45,702 - Reentrenamiento exitoso. Métricas: {'precision': np.float64(0.9777827532468653), 'recall': np.float64(0.9777777777777777), 'f1_score': np.float64(0.9777737823641754)}
