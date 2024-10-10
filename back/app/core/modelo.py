@@ -41,7 +41,7 @@ class Modelo:
         Recibe una lista de textos y devuelve una lista de predicciones con sus probabilidades.
         """
         fecha_actual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        nombre_archivo = os.path.join(self.base_dir, 'logsModelo', 'metadatos', f'prediccion_datos_{fecha_actual}.csv')
+        nombre_archivo = os.path.join(self.base_dir, 'logsModelo', 'datos', f'prediccion_datos_{fecha_actual}.csv')
 
         # Crear el directorio si no existe
         os.makedirs(os.path.dirname(nombre_archivo), exist_ok=True)

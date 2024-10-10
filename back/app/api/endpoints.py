@@ -23,7 +23,6 @@ class RetrainRequest(BaseModel):
 async def predict(request: PredictionRequest):
     try:
         resultados = modelo.predict(request.data)
-        print(resultados)
         return resultados
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

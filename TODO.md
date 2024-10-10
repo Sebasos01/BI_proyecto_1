@@ -16,9 +16,9 @@
 #### 2. **Desarrollo de la aplicación web o móvil (Ingeniero de Software)**
    - **Objetivo**: Construir una aplicación para que el usuario final pueda interactuar con el modelo y ver las predicciones con sus probabilidades.
    - **Pasos**:
-     1. Diseñar la interfaz de usuario para facilitar la entrada de datos.
-     2. Integrar la API desarrollada en la automatización con la aplicación.
-     3. Permitir al usuario ingresar textos para obtener predicciones y probabilidades asociadas.
+     1. [x] Diseñar la interfaz de usuario para facilitar la entrada de datos.
+     2. [x] Integrar la API desarrollada en la automatización con la aplicación.
+     3. [x] Permitir al usuario ingresar textos para obtener predicciones y probabilidades asociadas.
      4. Justificar el rol del usuario que utilizará la aplicación, su relación con el proceso de negocio y el valor que aporta.
    - **Entregable**: Aplicación funcional y justificación de su diseño, el rol de usuario y su valor.
 
