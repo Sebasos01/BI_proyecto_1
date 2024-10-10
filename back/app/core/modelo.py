@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 import logging
 from sklearn.metrics import precision_score, recall_score, f1_score
+from sklearn.model_selection import train_test_split
 from datetime import datetime
 import traceback
 import importlib.util
@@ -98,56 +99,53 @@ class Modelo:
 
         return logger
     
-    def retrain(self, textos: List[str], etiquetas: List[int], ruta_df_test=None) -> Dict[str, float]:
-        """
-        Recibe listas de textos y etiquetas, reentrena el modelo y devuelve las métricas de evaluación.
-        """
-        if ruta_df_test is None:
-            ruta_df_test = os.path.join(self.base_dir, "assets", "TestODScat_345.csv")
+def retrain(self, textos: List[str], etiquetas: List[int]) -> Dict[str, float]:
+    """
+    Recibe listas de textos y etiquetas, reentrena el modelo y devuelve las métricas de evaluación.
+    """
+    fecha_actual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    nombre_archivo = os.path.join(self.base_dir, 'logsModelo', 'datos', f'entrenamiento_datos_{fecha_actual}.csv')
 
-        fecha_actual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        nombre_archivo = os.path.join(self.base_dir, 'logsModelo', 'metadatos', f'entrenamiento_datos_{fecha_actual}.csv')
+    # Crear el directorio si no existe
+    os.makedirs(os.path.dirname(nombre_archivo), exist_ok=True)
 
-        # Crear el directorio si no existe
-        os.makedirs(os.path.dirname(nombre_archivo), exist_ok=True)
+    # Crear DataFrame de entrenamiento
+    df = pd.DataFrame({'Textos_espanol': textos, 'sdg': etiquetas})
+    df.to_csv(nombre_archivo, index=False)
 
-        # Crear DataFrame de entrenamiento
-        df_train = pd.DataFrame({'Textos_espanol': textos, 'sdg': etiquetas})
-        df_train.to_csv(nombre_archivo, index=False)
+    self.logger.info(f'Iniciando reentrenamiento. Cantidad de textos: {len(textos)}. Archivo de entrada: {nombre_archivo}')
+    evaluacion = {}
 
-        self.logger.info(f'Iniciando reentrenamiento. Cantidad de textos: {len(textos)}. Archivo de entrada: {nombre_archivo}')
-        evaluacion = {}
-        try:
-            X_train = df_train[['Textos_espanol']]
-            y_train = df_train['sdg']
+    try:
+        # Dividir los datos en conjuntos de entrenamiento y prueba
+        X_train, X_test, y_train, y_test = train_test_split(
+            df[['Textos_espanol']], df['sdg'], test_size=0.2, random_state=42
+        )
 
-            # Reentrenar el modelo
-            nuevo_modelo = self.modelo.fit(X_train, y_train)
-            self.modelo = nuevo_modelo
-            joblib.dump(self.modelo, self.ruta_modelo)
+        # Reentrenar el modelo
+        nuevo_modelo = self.modelo.fit(X_train, y_train)
+        self.modelo = nuevo_modelo
+        joblib.dump(self.modelo, self.ruta_modelo)
 
-            # Evaluar el modelo con el conjunto de prueba
-            df_test = pd.read_csv(ruta_df_test)
-            X_test = df_test[['Textos_espanol']]
-            y_test = df_test['sdg']
+        # Evaluar el modelo con el conjunto de prueba
+        y_pred_test = self.modelo.predict(X_test)
 
-            y_pred_test = self.modelo.predict(X_test)
+        # Calcular las métricas de evaluación
+        precision = precision_score(y_test, y_pred_test, average='weighted')
+        recall = recall_score(y_test, y_pred_test, average='weighted')
+        f1 = f1_score(y_test, y_pred_test, average='weighted')
 
-            precision = precision_score(y_test, y_pred_test, average='weighted')
-            recall = recall_score(y_test, y_pred_test, average='weighted')
-            f1 = f1_score(y_test, y_pred_test, average='weighted')
+        evaluacion = {
+            'precision': precision,
+            'recall': recall,
+            'f1_score': f1
+        }
 
-            evaluacion = {
-                'precision': precision,
-                'recall': recall,
-                'f1_score': f1
-            }
+        self.logger.info(f'Reentrenamiento exitoso. Métricas: {evaluacion}')
 
-            self.logger.info(f'Reentrenamiento exitoso. Métricas: {evaluacion}')
+    except Exception as e:
+        error_message = traceback.format_exc()
+        self.logger.error(f'Error en el reentrenamiento. Archivo de entrada: {nombre_archivo}. Error: {error_message}')
+        raise e  # Propagar la excepción para que FastAPI pueda manejarla
 
-        except Exception as e:
-            error_message = traceback.format_exc()
-            self.logger.error(f'Error en el reentrenamiento. Archivo de entrada: {nombre_archivo}. Error: {error_message}')
-            raise e  # Propagar la excepción para que FastAPI pueda manejarla
-
-        return evaluacion
+    return evaluacion
